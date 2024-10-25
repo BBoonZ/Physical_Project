@@ -33,8 +33,8 @@ class SalesRouter:
         product = self.IStock.get_product(product_id)
         return self.templates.TemplateResponse("popup_sale_record_1.html", {"request": request, "Product": product})
 
-    async def save_record(self, id: str = Form(), price: str = Form(), value: str = Form()):
-        price = await self.IStock.get_product(id)[7]
+    async def save_record(self, id: str = Form(), value: str = Form()): #price: str = Form()
+        price = self.IStock.get_product(id)[7]
         await self.IRecord.save_record(id, int(price)*int(value), value)
         return None
 
