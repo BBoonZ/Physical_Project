@@ -6,6 +6,10 @@ from app.db.database import SessionLocal, engine
 from app.route.RecordSalesRoute import SalesRouter
 from app.route.StockRoute import StockRouter
 from app.route.UploadFile import UploadRoute
+from app.route.mqtt_route import EventRoute
+from app.route.mqtt_event import startup_event, shutdown_event
+import paho.mqtt.client as mqtt
+
 
 app = FastAPI()
 
@@ -20,9 +24,13 @@ app.mount("/img", StaticFiles(directory="app/img"), name="img")                 
 sales_router = SalesRouter()
 stock_router = StockRouter()
 upload_router = UploadRoute()
+mqtt_router = EventRoute()
 
 app.include_router(sales_router.router)
 app.include_router(stock_router.router)
+app.include_router(mqtt_router.router)
+app.add_event_handler("startup", startup_event)
+app.add_event_handler("shutdown", shutdown_event)
 # app.include_router(upload_router.router)
 
 # Create the database tables if they don't exist

@@ -28,6 +28,12 @@ class ProductManager:
         product = self.cursor.fetchall()[0]
         return product
 
+    def get_product_code(self, code):
+        """Retrieve a specific product by its ID."""
+        self.cursor.execute("SELECT * FROM product WHERE code = ?", (code,))
+        product = self.cursor.fetchall()[0]
+        return product
+
     def get_type_product(self, product_type):
         """Retrieve all products of a specific type."""
         self.cursor.execute("SELECT * FROM product WHERE type = ? ORDER BY id", (product_type,))

@@ -20,3 +20,4 @@ class Product(Base):
     stock_quantity = Column(Integer, index=True)
     type = Column(String, index=True)
     price = Column(String, index=True)
+    code = Column(String, index=True)

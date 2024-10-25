@@ -28,7 +28,7 @@ class ICreateProduct:
             product_type = "pendants"
         return product_type
 
-    async def create_product(self, name, info, file_pic, stock_quantity, product_type, price):
+    async def create_product(self, name, info, file_pic, stock_quantity, product_type, price, code):
         """Insert a new product with an image into the database."""
         # Construct the absolute path to the img folder
         image_path = Path(__file__).resolve().parent.parent / 'img' / f'{file_pic}'
@@ -60,8 +60,8 @@ class ICreateProduct:
 
         # Insert the product into the database
         self.cursor.execute(
-            'INSERT INTO product(name, information, file_pic, pic, stock_quantity, type, price) VALUES (?, ?, ?, ?, ?, ?, ?)',
-            (name, info, image_name, image_data, stock_quantity, product_type, price)
+            'INSERT INTO product(name, information, file_pic, pic, stock_quantity, type, price, code) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            (name, info, image_name, image_data, stock_quantity, product_type, price, code)
         )
 
         # Commit the transaction
