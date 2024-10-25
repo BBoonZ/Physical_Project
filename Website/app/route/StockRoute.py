@@ -28,6 +28,9 @@ class StockRouter:
         self.router.add_api_route("/stock/create/submit", self.summit_create_product, methods=["POST"])
         self.router.add_api_route("/stock/delete/{product_id}", self.delete_product, methods=["POST"])
         self.router.add_api_route("/stock/edit/{product_id}", self.summit_popup_edit, methods=["POST"])
+
+        self.router.add_api_route("/increaseproduct/{id}/{num}", self.increaseproduct, methods=["GET"], response_class=HTMLResponse)
+        self.router.add_api_route("/decreaseproduct/{id}/{num}", self.decreaseproduct, methods=["GET"], response_class=HTMLResponse)
     
     async def home(self, request: Request):
         return self.templates.TemplateResponse("home.html", {"request": request})
@@ -73,13 +76,18 @@ class StockRouter:
 
         await self.Upload.upload_file(file)
         # # print(name, info, file.filename, value, product_type, price)
-        await self.ICreate.create_product(name, info, file.filename, value, product_type, price,)
+        await self.ICreate.create_product(name, info, file.filename, value, product_type, price, code,)
         return None
 
     async def delete_product(self, product_id):
         self.IDelete.DeleteProduct(product_id)
         return None
 
+    async def increaseproduct(self, request: Request, product_id, num):
+        self.IStock.increase_product(product_id, int(num))
+
+    async def decreaseproduct(self, request: Request, product_id, num):
+        self.IStock.decrease_product(product_id, int(num))
 # To use the SalesRouter class, you would initialize it and include its router in your FastAPI app
 # Example:
 # app = FastAPI()

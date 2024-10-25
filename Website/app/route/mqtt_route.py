@@ -13,10 +13,10 @@ class EventRoute:
 
     async def get_product_info(self, request: Request, code: str):
         topic = "phycom/66070108"
-        message = "none"
-        # print(id, name, info, file.filename, value, product_type, price, code)
-        # product = await self.IStock.get_product_code(code)
-        # product = tuple(product[0], product[1], product[6])
-        product = "hahahhah"
-        mqtt_client.publish(topic, product)
+        message = "hahahhah"
+        # print(id, name, info, file.filename, value, message_type, price, code)
+        message = self.IStock.get_product_code(code)
+        message = str(message[0]) + " " + str(message[1]) + " " + str(message[5]) + " " + str(message[7])
+        
+        mqtt_client.publish(topic, message)
         return None

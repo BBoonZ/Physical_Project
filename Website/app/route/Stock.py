@@ -29,7 +29,7 @@ class ProductManager:
         return product
 
     def get_product_code(self, code):
-        """Retrieve a specific product by its ID."""
+        """Retrieve a specific product by its Code."""
         self.cursor.execute("SELECT * FROM product WHERE code = ?", (code,))
         product = self.cursor.fetchall()[0]
         return product
