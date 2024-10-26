@@ -5,7 +5,7 @@
 }
 
 header {
-    background-color: #384B70;
+    background-color: rgb(84, 56, 0);
     padding: 9px 0 0 0;
     position: fixed;
     top: 0;
@@ -78,7 +78,7 @@ header {
 }
 
 .button_sale_record {
-    background-color: #384B70;
+    background-color: rgb(84, 56, 0);
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -91,8 +91,8 @@ header {
 
 /* ปุ่ม Sale Record ตอนวางเม้า*/
 .button_sale_record:hover {
-    background-color: #9EDDF8;
-    color: black;
+    background-color: rgb(152, 87, 23);
+    color: rgb(255, 255, 255);
 }
 
 .dropdown_financial {
@@ -102,7 +102,7 @@ header {
 
 /* ปุ่ม Financial */
 .dropdown_financial_class {
-    background-color: #384B70;
+    background-color: rgb(84, 56, 0);
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -114,14 +114,14 @@ header {
 }
 
 .dropdown_financial_class.active {
-    background-color: #9EDDF8;
+    background-color: rgb(152, 87, 23);
     color: black;
 }
 
 .drop-down {
     display: none;
     position: absolute;
-    background-color: #9EDDF8;
+    background-color: rgb(152, 87, 23);
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -141,7 +141,7 @@ header {
 
 /* ปุ่ม stock */
 .dropdown_Stock_class {
-    background-color: #384B70;
+    background-color: rgb(84, 56, 0);
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -154,14 +154,16 @@ header {
 
 /* ปุ่ม Stock ตอนเม้าวาง */
 .dropdown_Stock_class:hover {
-    background-color: #9EDDF8;
-    color: black;
+    background-color: rgb(152, 87, 23);
+    color: rgb(255, 255, 255);
 }
 
 /* ----------------------------------------------------------------------------- */
 /* ส่วนเนื้อหา */
 .content {
-    background-color: #D3F2FF;
+    background-image: url('/static/img/Restaurant.jpg');
+    background-size: cover; /* ปรับขนาดให้พอดีกับพื้นที่ */
+    background-repeat: no-repeat; /* ป้องกันการซ้ำของภาพ */
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -174,17 +176,22 @@ header {
     gap: 20px;
     width: 90%;
     height: 100%;
-    background-color: white;
+    background-color: rgb(255, 249, 243);
     margin: 0 auto;
+    opacity: 0.95; /* กำหนดระดับความโปร่งใส */
 }
 
 /* ส่วนของปุ่มข้าง ๆ */
 .list_product {
     display: grid;
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     width: 200px;
     margin: 10px 20px 0 20px;
     overflow: hidden;
+}
+
+.list_product button {
+    border: none;
 }
 
 .ring, .earring, .bracelets, .bangles, .necklaces, .pendants{
@@ -197,7 +204,7 @@ header {
     font-size: 18px;
     gap: 5px;
     padding: 0 5px;
-    background-color: white;
+    background-color: rgb(255, 249, 243);
     cursor: pointer;
     font-family: "Nunito", sans-serif;
 }
@@ -205,6 +212,7 @@ header {
 .ring img, .earring img, .bracelets img, .bangles img, .necklaces img, .pendants img {
     width: 50px;
     height: 50px;
+    opacity: 1;
 }
 
 .all_product img {
@@ -221,7 +229,7 @@ header {
     font-size: 18px;
     gap: 5px;
     padding: 0 5px;
-    background-color: white;
+    background-color: rgb(255, 249, 243);
     cursor: pointer;
     font-family: "Nunito", sans-serif;
 }
@@ -295,7 +303,7 @@ header {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #384B70;
+    background-color: rgb(84, 56, 0);
     color: white;
     border: none;
     cursor: pointer;
