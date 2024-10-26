@@ -29,6 +29,7 @@ class StockRouter:
         self.router.add_api_route("/stock/delete/{product_id}", self.delete_product, methods=["POST"])
         self.router.add_api_route("/stock/edit/{product_id}", self.summit_popup_edit, methods=["POST"])
 
+        # Arduino
         self.router.add_api_route("/increaseproduct/{id}/{num}", self.increaseproduct, methods=["GET"], response_class=HTMLResponse)
         self.router.add_api_route("/decreaseproduct/{id}/{num}", self.decreaseproduct, methods=["GET"], response_class=HTMLResponse)
     
