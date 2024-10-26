@@ -46,12 +46,12 @@ class StockRouter:
         option = info[6]
         option_dic = {
             "none" : "option0",
-            "ring" : "option1",
-            "earring" : "option2",
-            "bracelets" : "option3",
-            "bangles" : "option4",
-            "necklaces" : "option5",
-            "pendants" : "option6"
+            "snack" : "option1",
+            "water" : "option2",
+            "cleaning" : "option3",
+            "skincare" : "option4",
+            "meds" : "option5"
+            # "pendants" : "option6"
             }
         option = option_dic.get(option)
         return self.templates.TemplateResponse("popup_edit.html", {"request" : request, "product": info, "option": option})

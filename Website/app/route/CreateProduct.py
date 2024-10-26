@@ -15,17 +15,17 @@ class ICreateProduct:
         if option == "option0":
             product_type = "none"
         elif option == "option1":
-            product_type = "ring"
+            product_type = "snack"
         elif option == "option2":
-            product_type = "earring"
+            product_type = "water"
         elif option == "option3":
-            product_type = "bracelets"
+            product_type = "cleaning"
         elif option == "option4":
-            product_type = "bangles"
+            product_type = "skincare"
         elif option == "option5":
-            product_type = "necklaces"
-        elif option == "option6":
-            product_type = "pendants"
+            product_type = "meds"
+        # elif option == "option6":
+        #     product_type = "pendants"
         return product_type
 
     async def create_product(self, name, info, file_pic, stock_quantity, product_type, price, code):

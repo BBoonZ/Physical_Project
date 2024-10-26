@@ -39,13 +39,19 @@
     <body class="content">
         <div class="white-square">
             <div class="list_product">
-                <button class="all_product" onclick="window.location.href='/recordsales/none';"> <img src="/static/img/all.png">All_product</button>
+                <!-- <button class="all_product" onclick="window.location.href='/recordsales/none';"> <img src="/static/img/all.png">All_product</button>
                 <button class="ring" onclick="window.location.href='/recordsales/ring';"> <img src="/static/img/ring.png">Ring</button>
                 <button class="earring" onclick="window.location.href='/recordsales/earring';"> <img src="/static/img/earrings.png">Earring</button>
                 <button class="bracelets" onclick="window.location.href='/recordsales/bracelets';"> <img src="/static/img/bracelet.png">Bracelets</button>
                 <button class="bangles" onclick="window.location.href='/recordsales/bangles';"> <img src="/static/img/bangles.png">Bangles</button>
                 <button class="necklaces" onclick="window.location.href='/recordsales/necklaces';"> <img src="/static/img/necklace.png">Necklaces</button>
-                <button class="pendants" onclick="window.location.href='/recordsales/pendants';"> <img src="/static/img/pendant.png">Pendants</button>
+                <button class="pendants" onclick="window.location.href='/recordsales/pendants';"> <img src="/static/img/pendant.png">Pendants</button> -->
+                <button class="all_product" onclick="window.location.href='/recordsales/none';"> <img src="/static/img/products.png" width="40px" height="40px">All_Product</button>
+                <button class="ring" onclick="window.location.href='/recordsales/snack';"> <img src="/static/img/snack.png" width="40px" height="40px">Snack</button>
+                <button class="ring" onclick="window.location.href='/recordsales/water';"> <img src="/static/img/water-bottle.png" width="40px" height="40px">Water</button>
+                <button class="ring" onclick="window.location.href='/recordsales/cleaning';"> <img src="/static/img/cleaning.png" width="40px" height="40px">Cleaning</button>
+                <button class="earring" onclick="window.location.href='/recordsales/skincare';"> <img src="/static/img/skin-care.png" width="40px" height="40px">SkinCare</button>
+                <button class="earring" onclick="window.location.href='/recordsales/meds';"> <img src="/static/img/medicine.png" width="40px" height="40px">Meds</button>
             </div>
             <div class="show_product">
                 {% for i in Available %}
