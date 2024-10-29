@@ -170,20 +170,39 @@
 
 
 
-  /* Responsive styling */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-    }
-    .navbar a {
-      padding: 15px;
-      margin: 5px 0;
-    }
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
   }
 
-  /* Main content styling */
-  .content {
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+  .navbar a {
+    padding: 15px;
+    margin: 5px 0;
   }
+
+  .title, .preview-container, .preview2-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview2-container .Module1, .preview2-container .Module2, .preview2-container .Module3, .preview2-container .Module4, .preview2-container .Module5 {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .video-container, .about {
+    width: 90%;
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+  }
+}
