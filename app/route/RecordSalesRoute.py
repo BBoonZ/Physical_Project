@@ -15,9 +15,6 @@ class SalesRouter:
         self.templates = Jinja2Templates(directory=str(BASE_DIR / "website" / "templates"))
 
         # Define routes
-        self.router.add_api_route("/recordsales/{type}", self.record_sales_home, methods=["GET"], response_class=HTMLResponse)
-        self.router.add_api_route("/recordsales/product/{product_id}", self.product_edit, methods=["GET"], response_class=HTMLResponse)
-        self.router.add_api_route("/saveRecord/", self.save_record, methods=["POST"])
         self.router.add_api_route("/cart", self.cart_show, methods=["GET"])
         self.router.add_api_route("/cart/delete/{product_id}", self.cart_delete, methods=["GET"])
         self.router.add_api_route("/cart/edit/{product_id}/{type}/{value}", self.card_edit, methods=["POST"])
@@ -25,16 +22,6 @@ class SalesRouter:
 
         #Arudino
         self.router.add_api_route("/recordsales/product_code/{product_id}/{value}", self.productcode_save, methods=["GET"])
-
-    async def record_sales_home(self, request: Request, type: str):
-        info = self.IStock.get_available()
-        if type != "none":
-            info = self.IStock.get_type_product(type)
-        return self.templates.TemplateResponse("sale_record.html", {"request": request, "Available": info})
-
-    async def product_edit(self, request: Request, product_id: str):
-        product = self.IStock.get_product(product_id)
-        return self.templates.TemplateResponse("popup_sale_record_1.html", {"request": request, "Product": product})
 
     async def save_record(self, id: str = Form(), value: str = Form()): #price: str = Form()
         price = self.IStock.get_product(id)[7]
@@ -69,9 +56,3 @@ class SalesRouter:
         price = self.IStock.get_product(product_id)[7]
         await self.IRecord.save_record(id, int(price)*int(value), value)
         return None
-
-# To use the SalesRouter class, you would initialize it and include its router in your FastAPI app
-# Example:
-# app = FastAPI()
-# sales_router = SalesRouter()
-# app.include_router(sales_router.router)

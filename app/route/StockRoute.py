@@ -84,11 +84,11 @@ class StockRouter:
         self.IDelete.DeleteProduct(product_id)
         return None
 
-    async def increaseproduct(self, request: Request, product_id, num):
-        self.IStock.increase_product(product_id, int(num))
+    async def increaseproduct(self, request: Request, id, num):
+        self.IStock.increase_product(id, int(num))
 
-    async def decreaseproduct(self, request: Request, product_id, num):
-        self.IStock.decrease_product(product_id, int(num))
+    async def decreaseproduct(self, request: Request, id, num):
+        self.IStock.decrease_product(id, int(num))
 # To use the SalesRouter class, you would initialize it and include its router in your FastAPI app
 # Example:
 # app = FastAPI()

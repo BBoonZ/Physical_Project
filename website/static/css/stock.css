@@ -6,7 +6,7 @@
 
 header {
     background-color: rgb(84, 56, 0);
-    padding: 50px 0 0 0;
+    padding: 30px 0 0 0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -33,12 +33,53 @@ header {
     font-size: 50px;
 }
 
+.logo p {
+    margin: 0;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-weight:lighter;
+    font-size: 35px;
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.cart_img {
+    width: 100%;
+    height: auto;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.login_img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
 .header-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     grid-gap: 10px;
     padding: 0 20px;
+    height: 155px;
 }
 
 .menu {
@@ -346,6 +387,24 @@ header {
 }
 
 .popup_new iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.popup_cart {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 700px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup_cart iframe {
     width: 100%;
     height: 100%;
 }

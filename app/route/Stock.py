@@ -16,12 +16,6 @@ class ProductManager:
         products = self.cursor.fetchall()
         return products
 
-    def get_available(self):
-        """Retrieve all products with stock quantities greater than 0."""
-        self.cursor.execute("SELECT * FROM product WHERE stock_quantity > 0 ORDER BY id")
-        products = self.cursor.fetchall()
-        return products
-
     def get_product(self, product_id):
         """Retrieve a specific product by its ID."""
         self.cursor.execute("SELECT * FROM product WHERE id = ?", (product_id,))

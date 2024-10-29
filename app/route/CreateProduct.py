@@ -34,24 +34,6 @@ class ICreateProduct:
         image_path = Path(__file__).resolve().parent.parent / 'img' / f'{file_pic}'
         image_name = file_pic
 
-        # image_path_jpg = img_folder_path / f'{image_name}.jpg'
-        # image_path_jpeg = img_folder_path / f'{image_name}.jpeg'
-        # image_path_png = img_folder_path / f'{image_name}.png'
-
-        # if image_path_jpg.exists():
-        #     image_path = image_path_jpg
-        #     image_name = f'{image_name}.jpg'
-        # elif image_path_jpeg.exists():
-        #     image_path = image_path_jpeg
-        #     image_name = f'{image_name}.jpeg'
-        # elif image_path_png.exists():
-        #     image_path = image_path_png
-        #     image_name = f'{image_name}.png'
-        # else:
-        #     raise FileNotFoundError("Image not found in .jpg, .jpeg, or .png formats")
-
-
-
         # # Convert the image to binary
         image_data = self.image_to_binary(image_path)
         # image_data = self.image_to_binary(image_name.split(".")[0])
@@ -72,9 +54,3 @@ class ICreateProduct:
     def close_connection(self):
         """Close the database connection."""
         self.conn.close()
-
-# Usage Example:
-# product_manager =ICreateProduct('instance/Anada.db')
-# product_manager.create_product('Product Name', 'Product Info', 'image_filename', 10, 'Product Type', 29.99)
-# ICreateProduct.create_product('Product Name', 'Product Info', 'hippo', 10, 'ring', 29.99)
-# product_manager.close_connection()
