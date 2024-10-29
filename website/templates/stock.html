@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-13 Five-Thirteen</title>
+    <link rel="stylesheet" href="/static/css/stock.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+    <!-- ส่วนหัวของเว็บพวกแถบเมนู -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>5-13 Five-Thirteen</h1>
+                <p>Stock</p>
+                <div class="login">
+                    <a href="/cart" class="cart" onclick="openPopup2(this.href); return false;">
+                        <img src="/static/img/shopping-cart.png" alt="shopping_cart" class="cart_img">
+                    </a>
+                </div>
+            </div>
+            <div class="menu">
+                <!-- <a href="/recordsales/none" id="button_sale_record_id" class="button_sale_record" >Sale Record</a> -->
+                <!-- <a href="/stock/type-none" id="dropdown_Stock_id" class="dropdown_Stock_class" >Stock</a> -->
+            </div>
+        </div>
+    </header>
+
+    <!-- ส่วนเนื้อหาข้างใน -->
+
+    <body class="content">
+        <div class="white-square">
+            <div class="list_product">
+                <button class="all_product" onclick="window.location.href='/stock/type-none';"> <img src="/static/img/products.png" width="40px" height="40px">All_Product</button>
+                <button class="ring" onclick="window.location.href='/stock/type-snack';"> <img src="/static/img/snack.png" width="40px" height="40px">Snack</button>
+                <button class="ring" onclick="window.location.href='/stock/type-water';"> <img src="/static/img/water-bottle.png" width="40px" height="40px">Water</button>
+                <button class="ring" onclick="window.location.href='/stock/type-cleaning';"> <img src="/static/img/cleaning.png" width="40px" height="40px">Cleaning</button>
+                <button class="earring" onclick="window.location.href='/stock/type-skincare';"> <img src="/static/img/skin-care.png" width="40px" height="40px">SkinCare</button>
+                <button class="earring" onclick="window.location.href='/stock/type-meds';"> <img src="/static/img/medicine.png" width="40px" height="40px">Meds</button>
+                <button class="new_item" id="new_item" onclick="openNew('/stock/create'); return false;">Add product</button>
+            </div>
+
+            <div class="show_product">
+                {% for i in All %}
+                <div class="product_1">
+                    <a href="/stock/edit/{{ i[0] }}" onclick="openEdit(this.href); return false;"><img
+                            src="{{ url_for('img', path=i[3]) }}"></a>
+                    <br>
+                    <h3>Name: {{ i[1] }}</h3>
+                    <h3>Quantity: {{ i[5] }}</h3>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- ใช้เปิด popup -->
+        <div id="popupContainer" class="popup" style="display:none;">
+            <iframe id="contentIframe" width="100" height="100"></iframe>
+        </div>
+
+        <div id="popup_new" class="popup_new" style="display:none;">
+            <iframe id="contentIframe2" width="900" height="600"></iframe>
+        </div>
+
+        <!-- ใช้เปิด popup -->
+        <div id="popup_cart" class="popup_cart" style="display:none;">
+            <iframe id="contentIframe3" width="900" height="600"></iframe>
+        </div>
+
+        <script src="/js/stock.js"></script>
+        <script>
+            function closePopup() {
+                document.getElementById('popupContainer').style.display = 'none';
+            }
+
+            function openNew(url) {
+                document.getElementById('popup_new').style.display = 'block';
+                var iframe2 = document.getElementById('contentIframe2');
+                iframe2.src = url;
+                console.log(url)
+            }
+
+            function closePopupNew() {
+                document.getElementById('popup_new').style.display = 'none';
+                window.location.reload();
+            }
+
+            function openPopup2(url) {
+                document.getElementById('popup_cart').style.display = 'block';
+                var iframe = document.getElementById('contentIframe3');
+                iframe.src = url;  // Set the iframe's src to the clicked link's href
+                console.log(url)
+            }
+            
+            function closePopup2() {
+                document.getElementById('popup_cart').style.display = 'none';
+            }
+        </script>
+    </body>
+</html>

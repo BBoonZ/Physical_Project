@@ -1,0 +1,172 @@
+h1 {
+    margin-top: 20px;
+    text-align: center;
+    font-family: "K2D", sans-serif;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(1fr, 1fr, 1fr);
+    border: 1px solid black;
+    padding: 10px 10px 0 10px;
+    margin: auto;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 40px 1fr 50px 1fr;
+    margin-bottom: 10px;
+}
+
+.inside_list {
+    display: flex;
+    gap: 10px;
+    width: 420px;
+    font-size: 15px;
+    font-family: "Nunito", sans-serif;
+}
+
+.list img {
+    width: 70px;
+    height: 70px;
+}
+
+.quantity {
+    background-color: white;
+    border: none;
+    text-align: start;
+    font-size: 15px;
+    font-family: "Nunito", sans-serif;
+}
+
+.quantity:focus {
+    outline: none;
+}
+
+.price {
+    border: none;
+    text-align: end;
+    font-size: 15px;
+    font-family: "Nunito", sans-serif;
+}
+
+.price:focus {
+    outline: none;
+}
+
+.bin {
+    background-image: url("../img/recycle-bin.png");
+    background-size: 23px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+table th {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    text-align: start;
+    padding-left: 10px;
+    background-color: #E8E8E8;
+    border-bottom: 1px solid black;
+    font-family: "K2D", sans-serif;
+}
+
+.price_result {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    color: red;
+    font-family: "K2D", sans-serif;
+}
+
+.both_button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.button_cancel {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #000;
+    font-size: 17px;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-family: "Nunito", sans-serif;
+}
+
+.button_submit {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #000;
+    font-size: 17px;
+    cursor: pointer;
+    background-color: #2a9fffb9;
+    font-family: "Nunito", sans-serif;
+}
+
+.button_cancel:hover{
+    background-color: #d0d0d0;
+}
+
+.button_submit:hover {
+    background-color: #388eff;
+}
+
+.border_button {
+    border: none;
+}
+
+@media (max-width: 1024px) {
+    .inside_list {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inside_list {
+        width: 200px;
+        font-size: 12px;
+    }
+    
+    .list img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .quantity {
+        font-size: 12px;
+    }
+    
+    .price {
+        font-size: 12px;
+    }
+    .bin {
+        background-size: 18px;
+    }
+}
+
+@media (max-width: 510px){
+    .list {
+        overflow-y: auto;
+    }
+
+    .inside_list {
+        width: 220px;
+        font-size: 12px;
+    }
+}

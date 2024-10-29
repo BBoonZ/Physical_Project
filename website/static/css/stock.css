@@ -1,0 +1,637 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(84, 56, 0);
+    padding: 30px 0 0 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.logo h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-weight:lighter;
+    font-size: 50px;
+}
+
+.logo p {
+    margin: 0;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-weight:lighter;
+    font-size: 35px;
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.cart_img {
+    width: 100%;
+    height: auto;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.login_img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    padding: 0 20px;
+    height: 155px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 40px 0 0 70px;
+    height: 100%;
+    font-family: "Nunito", sans-serif;
+}
+
+.button_sale_record {
+    background-color: rgb(84, 56, 0);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* ปุ่ม Sale Record ตอนวางเม้า*/
+.button_sale_record:hover {
+    background-color: rgb(152, 87, 23);
+    color: rgb(255, 255, 255);
+}
+
+.dropdown_financial {
+    position: relative;
+    display: inline-block;
+}
+
+/* ปุ่ม Financial */
+.dropdown_financial_class {
+    background-color: rgb(84, 56, 0);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    transition: background-color ease;
+}
+
+.dropdown_financial_class.active {
+    background-color: rgb(152, 87, 23);
+    color: black;
+}
+
+.drop-down {
+    display: none;
+    position: absolute;
+    background-color: rgb(152, 87, 23);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.drop-down a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.drop-down a:hover {
+    background-color: #ffffff;
+}
+
+/* ปุ่ม stock */
+.dropdown_Stock_class {
+    background-color: rgb(84, 56, 0);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* ปุ่ม Stock ตอนเม้าวาง */
+.dropdown_Stock_class:hover {
+    background-color: rgb(152, 87, 23);
+    color: rgb(255, 255, 255);
+}
+/* ----------------------------------------------------------------------------- */
+/* ส่วนเนื้อหา */
+.content {
+    background-image: url('/static/img/Restaurant.jpg');
+    background-size: cover; /* ปรับขนาดให้พอดีกับพื้นที่ */
+    background-repeat: no-repeat; /* ป้องกันการซ้ำของภาพ */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 200px;
+}
+
+/* พื้นที่สีขาว */
+.white-square {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+    width: 90%;
+    background-color: rgb(255, 249, 243);
+    margin: 50px auto 0 auto;
+    opacity: 0.95;
+}
+
+/* ส่วนของปุ่มข้าง ๆ */
+.list_product {
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    width: 238px;
+    overflow: hidden;
+    margin: 10px 20px 0 20px;
+}
+
+.list_product button {
+    display: flex;
+    gap: 5px;
+    padding: 0 5px;
+    background-color: rgb(255, 249, 243);
+    cursor: pointer;
+}
+
+.all_product {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+}
+
+.ring {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+}
+
+.earring {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+}
+.bracelets {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+}
+.bangles {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+}
+.necklaces {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+}
+
+.pendants {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+}
+
+.new_item {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    border: 1.5px solid black;
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: "Nunito", sans-serif;
+}
+
+.new_item:hover {
+    background-color: rgb(84, 56, 0);
+    color: white;
+}
+
+.delete_item {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    border: 1.5px solid black;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete_item:hover {
+    background-color: rgb(84, 56, 0);
+    color: white;
+}
+
+.show_product {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-start; /* จัดให้อยู่ทางซ้าย */
+    align-items: flex-start; /* จัดให้อยู่ด้านบน */
+    text-align: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 20px 100px;
+    gap: 100px;
+}
+
+.product_1 {
+    width: 350px;
+    height: 350px;
+}
+
+.product_1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ring img, .earring img, .bracelets img, .bangles img, .necklaces img, .pendants img {
+        width: 50px;
+        height: 50px;
+    }
+
+.product_1 h3{
+    text-align: center;
+    font-family: "K2D", sans-serif;
+}
+
+/* ตกแต่ง scroll bar */
+.show_product::-webkit-scrollbar {
+    width: 10px; /* กำหนดความกว้างของ scrollbar */
+}
+
+.show_product::-webkit-scrollbar-track {
+    background: #E8E8E8;
+    border-radius: 10%;
+}
+
+.show_product::-webkit-scrollbar-thumb {
+    background: #9E9C9C;
+    border-radius: 10px;
+}
+
+.show_product::-webkit-scrollbar-thumb:hover {
+    background: #737070;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 600px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.popup_new {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 700px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup_new iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.popup_cart {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 700px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup_cart iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(84, 56, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media (max-width: 1800px){
+    .product_1 {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 1700px){
+    .product_1 {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 1440px){
+    .show_product {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        width: 1100px;
+        padding: 20px 50px;
+    }
+    .product_1 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1200px){
+    .show_product {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        width: 1100px;
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 1024px){
+    header {
+        width: 100%;
+    }
+    .list_product {
+        width: 250px;
+        margin: 10px 0px 0 10px;
+        overflow: hidden;
+    }
+    
+    .ring, .earring, .bracelets, .bangles, .necklaces, .pendants{
+        font-size: 18px;
+        padding: 0 5px;
+    }
+    
+    .ring img, .earring img, .bracelets img, .bangles img, .necklaces img, .pendants img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .all_product img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .all_product {
+        font-size: 18px;
+        gap: 5px;
+        padding: 0 5px;
+    }
+    .show_product {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+    }
+    .product_1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .popup {
+        width: 700px;
+        height: 500px;
+    }
+
+    .popup_new {
+        width: 700px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 860px){
+    .product_1 {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px){
+    .list_product {
+        width: 150px;
+        margin: 10px 0px 0 10px;
+        overflow: hidden;
+    }
+    
+    .ring, .earring, .bracelets, .bangles, .necklaces, .pendants{
+        font-size: 15px;
+    }
+    
+    .ring img, .earring img, .bracelets img, .bangles img, .necklaces img, .pendants img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .all_product img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .all_product {
+        font-size: 15px;
+        gap: 5px;
+    }
+
+    .show_product {
+        padding: 20px 50px;
+        gap: 100px;
+    }
+
+    .popup {
+        width: 500px;
+        height: 600px;
+    }
+
+    .popup_new {
+        width: 500px;
+        height: 600px;
+    }
+}
+
+@media (max-width: 680px){
+    .show_product {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .show_product {
+        margin: auto auto;
+    }
+
+    .ring, .earring, .bracelets, .bangles, .necklaces, .pendants{
+        font-size: 13px;
+    }
+
+    .all_product {
+        font-size: 12px;
+    }
+
+    .ring img, .earring img, .bracelets img, .bangles img, .necklaces img, .pendants img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .all_product img {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 510px){
+    .logo h1 {
+        margin: 0;
+        margin-bottom: 10px;
+        transform: translateX(-50%);
+        font-size: 40px;
+    }
+    .cart {
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .button_sale_record {
+        width: 150px;
+    }
+    
+    .drop-down {
+        width: 150px;
+    }
+    
+    .dropdown_Stock_class {
+        width: 150px;
+    }
+
+    .popup {
+        width: 300px;
+        height: 550px;
+    }
+
+    .popup_new {
+        width: 300px;
+        height: 630px;
+    }
+}
+
+
+
+
+

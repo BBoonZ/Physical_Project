@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-13 Five-Thirteen</title>
+    <link rel="stylesheet" href="/static/css/popup_create.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--  pop up เพิ่มสินค้าใหม่ -->
+    <form action="/stock/create/submit" method="post" enctype="multipart/form-data">
+        <div class="new-product" id="newProductPopup">
+            <div class="new-product-layout">
+                <div class="help_me">
+                    <div class="new-topleft">
+                        <button type="button" class="cancel-button" id="newCancelButton" onclick="closeNew()"> Cancel </button>
+                    </div>
+    
+                    <div class="new-downleft">
+                        <img id="imagePreview" class="new-image" alt="Image Preview" style="display: none;">
+                        <button type="button" class="add-picture-button" id="add-picture-button">Add Picture</button>
+                        <input type="file" name="file" id="fileInput" style="display: none;" accept="image/png, image/jpeg">
+                    </div>
+                </div>
+                <div class="new-downright">
+                    <div class="new-topright">
+                        <h2> Product Name </h2>
+                        <input type="text" class="input-text" name="name" required>
+                    </div>
+
+                    <div class="downright-item">
+                        <h2> Details </h2>
+                        <textarea name="info"></textarea>
+                    </div>
+
+                    <div class="downright-item">
+                        <h2> Type</h2>
+                        <select name="product_type" required>
+                            <option value="" disabled selected>choose</option>
+                            <option value="option0">None</option>
+                            <option value="option1">Snack</option>
+                            <option value="option2">Water</option>
+                            <option value="option3">Cleaning</option>
+                            <option value="option4">SkinCare</option>
+                            <option value="option5">Meds</option>
+                            <!-- <option value="option6">P</option> -->
+                        </select>
+                    </div>
+
+
+                    <div class="downright-item">
+                        <h2> quantity </h2>
+                        <div class="slider-container">
+                            <input type="text" class="input-text" name="value" required>
+                        </div>
+                        <div class="downright-item-price">
+                            <h2> price </h2>
+                            <input type="text" class="input-text" name="price" required>
+                        </div>
+                        <h2> code </h2>
+                        <div class="slider-container">
+                            <input type="text" class="input-text" name="code" required>
+                        </div>
+                        <div class="downright-item">
+                            <button type="submit" class="new-submit-button" onclick="closeNew()"> Submit </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="/js/popup_create.js"></script>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+        function closePopupNew() {
+            window.parent.closePopupNew();
+        }
+
+        // ปิดหน้าต่าง edit popup
+        function closeNew() {
+            closePopupNew();
+        }
+
+
+    </script>
+</body>
+</html>

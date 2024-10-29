@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-13 Five-Thirteen</title>
+    <link rel="stylesheet" href="/static/css/popup_edit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="edit-layout">
+        <div class="help_me">
+            <input type="file" id="editFileInput" style="display: none;">
+            <form action="/stock/delete/{{ product[0] }}" method="post">
+                <div class="top">
+                    <button type="submit" class="cancel-button" onclick="closeEdit()"> ลบสินค้า </button>
+                </div>
+            </form>
+            <div class="left">
+                <form action="/stock/edit/{product_id}" method="post" enctype="multipart/form-data">
+                    <img src="{{ url_for('img', path=product[3]) }}" alt="Product Image" class="edit-product-picture"
+                        id="imagePreview">
+                    <button type="button" class="change-picture-button" id="change-picture-button">Change
+                        Picture</button>
+                    <input name="file" type="file" id="fileInput" style="display: none;" accept="image/png, image/jpeg">
+            </div>
+        </div>
+        <div class="right-layout">
+            <input type="hidden" id="product_id" name="id" value="{{ product[0] }}">
+            <div class="margin-inright">
+                <Label for="product-name"> Name: </Label>
+                <input type="text" class="input-text" value="{{ product[1] }}" id="product-name" name="name">
+            </div>
+            <div class="margin-inright">
+                <Label for="product-detail"> Details: </Label>
+                <input type="text" class="input-text" value="{{ product[2] }}" id="product-detail" name="info">
+            </div>
+            <div class="margin-inright">
+                <Label for="product-type"> Type </Label>
+                <select style="padding: 5px 15px 5px 15px;" id="product-type" data-selected-product="{{ option }}"
+                    name="type">
+                    <option value="option0">None</option>
+                    <option value="option1">Snack</option>
+                    <option value="option2">Water</option>
+                    <option value="option3">Cleaning</option>
+                    <option value="option4">SkinCare</option>
+                    <option value="option5">Meds</option>
+                </select>
+            </div>
+            <!-- <div class="margin-inright">
+                <Label for="product-cost"> ต้นทุน: </Label>
+                <input type="text" class="input-text" value="{{ product[7] }}" id="product-cost"
+                    name="maxprice">
+            </div> -->
+            <div class="margin-inright">
+                <Label for="product-price"> Price: </Label>
+                <input type="text" class="input-text" value="{{ product[7] }}" id="product-price" name="price">
+
+            </div>
+            <div class="margin-inright">
+                <Label for="product-price"> Code: </Label>
+                <input type="text" class="input-text" value="{{ product[8] }}" id="product-price" name="code" disabled>
+            </div>
+            <div class="margin-inrigh">
+                <p> Quantity </p>
+                <div class="quantity-container">
+                    <button type="button" class="quantity-button" onclick="decrement()">-</button>
+                    <input type="text" id="quantity" class="quantity-input" value="{{ product[5] }}" name="value">
+                    <button type="button" class="quantity-button" onclick="increment()">+</button>
+                </div>
+            </div>
+            <div class="margin-inright">
+                <button type="button" class="edit-cancel-button" id="edit-cancel-button" onclick="closeEdit()">
+                    Cancel</button>
+                <button type="submit" class="edit-submit-button" id="edit-submit-button" onclick="closeEdit()"> Submit
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/popup_edit.js"></script>
+</body>
+
+</html>
