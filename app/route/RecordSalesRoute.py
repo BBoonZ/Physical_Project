@@ -54,5 +54,5 @@ class SalesRouter:
 
     async def productcode_save(self, product_id, value):
         price = self.IStock.get_product(product_id)[7]
-        await self.IRecord.save_record(id, int(price)*int(value), value)
+        await self.IRecord.save_record(product_id, int(price)*int(value), value)
         return None

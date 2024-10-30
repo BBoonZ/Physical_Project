@@ -10,9 +10,10 @@ class RecordManager(IRecordManager):
         self.all = []
         self.temp_id = 1
 
-    async def save_record(self, id, price, value):
+    async def save_record(self, ids, price, value):
         """Save a temporary record with product info, price, and value."""
-        self.cursor.execute("SELECT id, name, information, file_pic, type FROM product WHERE id = ?", (id,))
+        # print((ids))
+        self.cursor.execute("SELECT id, name, information, file_pic, type FROM product WHERE id = ?", (ids,))
         info = self.cursor.fetchall()[0]
         price = int(price)
         await self.add_price(self.temp_id, price)
