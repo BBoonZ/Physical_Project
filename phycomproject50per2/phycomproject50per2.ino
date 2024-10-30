@@ -44,8 +44,8 @@ int mode = 1;
 //--------------------------------------------------------------------------------------------------------------------------------
 //กำหนด เชื่อม wifi
 //================================================================================================================================
-const char WIFI_SSID[] = "vttm";          // CHANGE TO YOUR WIFI SSID
-const char WIFI_PASSWORD[] = "tlelovepam";  // CHANGE TO YOUR WIFI PASSWORD
+const char WIFI_SSID[] = "BBoonZ_2.4G";          // CHANGE TO YOUR WIFI SSID
+const char WIFI_PASSWORD[] = "qwertyuiop";  // CHANGE TO YOUR WIFI PASSWORD
 //================================================================================================================================
 
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -349,7 +349,7 @@ char getKey() {
 }
 
 void recordsale() {
-   String productCode = String("/recordsales/product_code/") + String(keys) + String(my2Str);
+   String productCode = String("/recordsales/product_code/") + String(id) +"/" +String(my2Str);
 if (client.connect(server, 443)) { // ใช้ port 443 สำหรับ HTTPS
         Serial.println("Connected to server");
         
@@ -375,7 +375,7 @@ if (client.connect(server, 443)) { // ใช้ port 443 สำหรับ HTTP
 }
 
 void increaseproduct() {
-   String productCode = String("/increaseproduct/") + String(id) + String(my2Str);
+   String productCode = String("/increaseproduct/") + String(id) + "/" +String(my2Str);
 if (client.connect(server, 443)) { // ใช้ port 443 สำหรับ HTTPS
         Serial.println("Connected to server");
         
@@ -401,7 +401,7 @@ if (client.connect(server, 443)) { // ใช้ port 443 สำหรับ HTTP
 }
 
 void decreaseproduct() {
-   String productCode = String("/decreaseproduct/") + String(id) + String(my2Str);
+   String productCode = String("/decreaseproduct/") + String(id) + "/" +String(my2Str);
 if (client.connect(server, 443)) { // ใช้ port 443 สำหรับ HTTPS
         Serial.println("Connected to server");
         
