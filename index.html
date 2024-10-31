@@ -23,37 +23,39 @@
             <h1>Scannerrrr</h1>
         </div>
         <div class="t_info">
-            <h1>Out Phycom_Project</h1>
+            <h1>Phycom Project Scanner</h1>
         </div>
         <div class="preview-container">
-            <img src="web_git/img/pic.jpg" alt="Preview Project">
-            <img src="web_git/img/pic.jpg" alt="Preview Project">
+            <img src="web_git/img/Arduino.png" alt="Preview Project">
+            <!-- <img src="web_git/img/pic.jpg" alt="Preview Project"> -->
+            <h1>Module</h1>
         </div>
-        <div class="preview2-container">
-            <div class="Module1">
-                <p>Usb Host Shield</p>
-                <img src="web_git/img/pic.jpg" alt="Preview Project">
+        <div class="grid-container-preview2">
+            <div class="module">
+                <p>USB Host Shield</p>
+                <img src="web_git/img/HostShield.png" alt="Preview Project">
             </div>
-            <div class="Module2">
+            <div class="module">
                 <p>Arduino Uno R4 Wifi</p>
-                <img src="web_git/img/pic.jpg" alt="Preview Project">
+                <img src="web_git/img/r4wifi.png" alt="Preview Project">
             </div>
-            <div class="Module3">
+            <div class="module">
                 <p>LCD</p>
-                <img src="web_git/img/pic.jpg" alt="Preview Project">
+                <img src="web_git/img/LCD.jpg" alt="Preview Project">
             </div>
-            <div class="Module4">
+            <div class="module">
                 <p>Keypad</p>
-                <img src="web_git/img/pic.jpg" alt="Preview Project">
+                <img src="web_git/img/Keypad.jpg" alt="Preview Project">
             </div>
-            <div class="Module5">
+            <div class="module">
                 <p>Scanner Module</p>
-                <img src="web_git/img/pic.jpg" alt="Preview Project">
+                <img src="web_git/img/scanner.png" alt="Preview Project">
             </div>
         </div>
+        
     </div>
 
-    <div class="about">
+    <div class="about" id="about">
         <h1>Abstract</h1>
         <p>โปรเจคนี้ทำขึ้นมาเพื่อช่วยในการจัดการคลังสินค้าง่ายขึ้นโดยใช้ตัว barcode ของสินค้า มีฟังก์ชั่นในการ เพิ่มสินค้า ลดสินค้า ตรวจสอบสินค้าในคลัง และ บันทึกการขายของสินค้า มีการแสดงบนหน้าจอ LCD และใช้งาน Keypad เพื่อเลือกใช้งานฟังก์ชั่นต่างๆ ซึ่งเชื่อมกับ Web server ที่เป็น Stock สำหรับจัดเก็บการสินค้าต่าง</p>
         <h1>Input</h1>
@@ -62,16 +64,51 @@
         <p>จำนวนสินค้าในคลังเกิดการเปลี่ยนแปลง</p>
     </div>
 
+    <div class="code" id="code">
+        <h1>Source Code</h1>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="web_git/img/Arduino.png" alt="Arduino">
+            </div>
+            <div class="slide">
+                <img src="web_git/img/HostShield.png" alt="Host Shield">
+            </div>
+            <div class="slide">
+                <img src="web_git/img/r4wifi.png" alt="Arduino Uno R4 Wifi">
+            </div>
+            <div class="slide">
+                <img src="web_git/img/LCD.jpg" alt="LCD">
+            </div>
+            <div class="slide">
+                <img src="web_git/img/Keypad.jpg" alt="Keypad">
+            </div>
+            <div class="slide">
+                <img src="web_git/img/scanner.png" alt="Scanner Module">
+            </div>
+        
+            <!-- ปุ่มเลื่อนภาพ -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </div>
 
-    <div class="video-container">
+
+    <div class="video-container" id="video">
         <h1>Project Video</h1>
         <iframe width="720" height="425" src="https://www.youtube.com/embed/2DVkNvVcQAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
 
-    <div class="mem-container">
+    <div class="mem-container" id="member">
         <div class="member"><h1>Mebmer</h1></div>
         <div class="card-container">
+            <div class="card">
+                <img src="web_git/img/pic.jpg" alt="Profile Picture">
+                <div class="card-content">
+                    <h2>Boriboon Chamnanphol</h2>
+                    <p>66070084</p>
+                </div>
+            </div>
             <div class="card">
                 <img src="web_git/img/pic.jpg" alt="Profile Picture">
                 <div class="card-content">
@@ -86,16 +123,26 @@
                     <p>66070276</p>
                 </div>
             </div>
-            <div class="card">
-                <img src="web_git/img/pic.jpg" alt="Profile Picture">
-                <div class="card-content">
-                    <h2>Nontawich Tungkun</h2>
-                    <p>66070276</p>
-                </div>
-            </div>
         </div>
     </div>
 
 </body>
-
+<script>
+    let slideIndex = 1;
+    showSlide(slideIndex);
+    
+    function changeSlide(n) {
+        showSlide(slideIndex += n);
+    }
+    
+    function showSlide(n) {
+        let slides = document.getElementsByClassName("slide");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+    </script>
 </html>

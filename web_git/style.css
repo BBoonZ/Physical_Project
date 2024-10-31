@@ -25,34 +25,48 @@
     color: #333;
   }
 
-  .preview2-container {
-    display: flex; /* Align children in a row */
-    justify-content: center; /* Optional: Adjust space between items */
-    align-items: center; /* Optional: Center items vertically */
-    gap: 5px;
+  .preview-container{
+    margin-top: 30px;
 }
 
-  .Module1 p, .Module2 p, .Module3 p, .Module4 p, .Module5 p {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-
-.Module1, .Module2, .Module3, .Module4, .Module5 {
-    margin: 30px;
-    padding: 0;
+  .preview-container img{
+    width:1000px;
 }
 
-.Module1 img, .Module2 img, .Module3 img, .Module4 img, .Module5 img {
-    width: 300px;
+.grid-container-preview2 {
+  /* background-color: #f5e5c0; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 0px;
+  margin-top: 30px;
+  padding: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
 }
+
+.preview2-container, .module {
+  text-align: center;
+}
+
+.module p {
+  font-family: Arial, sans-serif;
+  font-size: 1.2em;
+}
+
+img {
+  width: 300px; /* กำหนดขนาดภาพให้เล็กลง */
+  height: auto;
+}
+
 
   /*  About  */
 .about {
-    max-width: 800px; /* กำหนดความกว้างสูงสุดของ div */
+    max-width: 1000px; /* กำหนดความกว้างสูงสุดของ div */
     margin: 0 auto; /* จัดกลาง div */
     padding: 20px; /* เพิ่ม padding ให้กับ div */
     font-family: Arial, sans-serif; /* กำหนดฟอนต์ที่ต้องการใช้ */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เงาให้กับ div */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* เงาให้กับ div */
     margin-bottom: 20px;
 }
 
@@ -68,17 +82,83 @@
     margin-bottom: 10px; /* ระยะห่างด้านล่าง */
 }
 
+  /* Source Code */
+
+  .code {
+    max-width: 1000px;
+    max-width: 1000px;
+    margin: 0 auto; /* จัดกลาง div */
+    text-align: center;
+    padding: 20px; /* เพิ่ม padding ให้กับ div */
+    font-family: Arial, sans-serif; /* กำหนดฟอนต์ที่ต้องการใช้ */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* เงาให้กับ div */
+    margin-bottom: 50px;
+  }
+
+  .code h1 {
+    font-size: 3em; /* ขนาดฟอนต์ของหัวข้อ */
+    margin-bottom: 15px; /* ระยะห่างด้านล่าง */
+  }
+
+  .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+  }
+
+  .slide {
+      display: none;
+      text-align: center;
+  }
+
+  .slide img {
+      width: 100%;
+      max-width: 500px;
+  }
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+/* ปรับให้ปุ่มเลื่อนเข้ามาใกล้ภาพมากขึ้น */
+.prev {
+    left: 150px; /* ปรับค่าตามความต้องการ */
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 150px; /* ปรับค่าตามความต้องการ */
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  color: white;
+    background-color: black;
+}
+
+
 
   /*  Video  */
 
 .video-container {
     text-align: center;
-    max-width: 800px; /* กำหนดความกว้างสูงสุดของ div */
+    max-width: 1000px; /* กำหนดความกว้างสูงสุดของ div */
     margin: 0 auto; /* จัดกลาง div */
     padding: 20px; /* เพิ่ม padding ให้กับ div */
     background-color: #fff; /* สีพื้นหลังของ div */
     border-radius: 8px; /* มุมกลม */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เงาให้กับ div */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* เงาให้กับ div */
 }
 
 .video-container h1 {
@@ -141,11 +221,12 @@
   .card {
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     padding: 20px;
     text-align: left;
+    margin-bottom: 30px;
   }
 
   .card img {
@@ -186,9 +267,13 @@
     align-items: center;
   }
 
-  .preview2-container .Module1, .preview2-container .Module2, .preview2-container .Module3, .preview2-container .Module4, .preview2-container .Module5 {
-    width: 100%;
-    margin: 10px 0;
+  .grid-container-preview2 {
+    grid-template-columns: repeat(2, 1fr); /* ปรับเป็น 2 คอลัมน์ */
+    gap: 10px;
+  }
+
+  img {
+      width: 100px; /* ลดขนาดภาพอีกครั้ง */
   }
 
   .video-container, .about {
@@ -204,5 +289,37 @@
   .card img {
     width: 100px;
     height: 100px;
+  }
+
+  .code {
+    padding: 15px; /* ลด padding ของ div */
+  }
+
+  .code h1 {
+      font-size: 2em; /* ลดขนาดฟอนต์ของหัวข้อ */
+  }
+
+  .slideshow-container {
+      max-width: 100%;
+  }
+
+  .slide img {
+      width: 90%; /* ลดขนาดภาพ */
+      max-width: 300px;
+  }
+
+  .prev, .next {
+      width: auto;
+      padding: 12px;
+      font-size: 18px;
+  }
+
+  /* ปรับตำแหน่งของปุ่มเลื่อนเข้ามาใกล้ภาพมากขึ้น */
+  .prev {
+      left: 20px; /* ลดระยะห่างจากขอบซ้าย */
+  }
+
+  .next {
+      right: 20px; /* ลดระยะห่างจากขอบขวา */
   }
 }
