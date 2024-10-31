@@ -9,12 +9,13 @@
   * ระบบลบจำนวนสินค้า
 
 ## Website About Project
-[Link Web Git](https://bboonz.github.io/Physical_Project/)
+[https://bboonz.github.io/Physical_Project/](https://bboonz.github.io/Physical_Project/)
 
 ## Website Project
-[Link Web Project](https://phycom-scannerrrr.onrender.com/) (เปิดนานนิดนึงนะครับ)
+[https://phycom-scannerrrr.onrender.com/](https://phycom-scannerrrr.onrender.com/) (เปิดนานนิดนึงนะครับ)
 
 ## Video Project
+  กดที่รูปได้เลยครับ
 [![Watch the video](https://img.youtube.com/vi/EK5VU_prZAU/0.jpg)](https://www.youtube.com/watch?v=EK5VU_prZAU)
 
 ## Poster
