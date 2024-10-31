@@ -15,7 +15,7 @@
 [Link Web Project](https://phycom-scannerrrr.onrender.com/) (เปิดนานนิดนึงนะครับ)
 
 ## Video Project
-[![Watch the video](https://img.youtube.com/vi/jxlV76i2UcQ/0.jpg)](https://www.youtube.com/watch?v=jxlV76i2UcQ)
+[![Watch the video](https://img.youtube.com/vi/EK5VU_prZAU/0.jpg)](https://www.youtube.com/watch?v=EK5VU_prZAU)
 
 ## Poster
 ![Poster](/poster.png)
