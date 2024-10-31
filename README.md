@@ -9,20 +9,20 @@
   * ระบบลบจำนวนสินค้า
 
 ## Website About Project
-[Link Git.io](https://bboonz.github.io/Physical_Project/)
+[Link Web Git](https://bboonz.github.io/Physical_Project/)
 
 ## Website Project
-[Link Web Project](https://phycom-scannerrrr.onrender.com/)
+[Link Web Project](https://phycom-scannerrrr.onrender.com/) (เปิดนานนิดนึงนะครับ)
 
 ## Video Project
 [![Watch the video](https://img.youtube.com/vi/jxlV76i2UcQ/0.jpg)](https://www.youtube.com/watch?v=jxlV76i2UcQ)
 
 ## Poster
-![Poster](web_git/img/pic.jpg)
+![Poster](web_git/img/poster.png)
 
 ## Member
 | ID     | ชื่อ     | รูปภาพ     |
 |--------------|--------------|--------------|
-| 66070084 | ธนัช  นรสาร | ![Image 1](URL1) |
-| 66070108 | บริบูรณ์  ชำนาญผล | ![Image 2](URL1) |
-| 66070276 | นนทวิชญ์  ถึงคุณ | ![Image 3](URL1) |
+| 66070084 | ธนัช  นรสาร | ![Image 1](web_git/img/1.png) |
+| 66070108 | บริบูรณ์  ชำนาญผล | ![Image 2](web_git/img/2.png) |
+| 66070276 | นนทวิชญ์  ถึงคุณ | ![Image 3](web_git/img/3.png) |
