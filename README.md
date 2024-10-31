@@ -18,7 +18,7 @@
 [![Watch the video](https://img.youtube.com/vi/jxlV76i2UcQ/0.jpg)](https://www.youtube.com/watch?v=jxlV76i2UcQ)
 
 ## Poster
-![Poster](web_git/img/poster.png)
+![Poster](/poster.png)
 
 ## Member
 | ID     | ชื่อ     | รูปภาพ     |
