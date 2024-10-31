@@ -113,7 +113,7 @@ img {
 
   .slide img {
       width: 100%;
-      max-width: 500px;
+      /* max-width: 500px; */
   }
 
   .prev, .next {
@@ -133,12 +133,12 @@ img {
 
 /* ปรับให้ปุ่มเลื่อนเข้ามาใกล้ภาพมากขึ้น */
 .prev {
-    left: 150px; /* ปรับค่าตามความต้องการ */
+    left: 2px; /* ปรับค่าตามความต้องการ */
     border-radius: 3px 0 0 3px;
 }
 
 .next {
-    right: 150px; /* ปรับค่าตามความต้องการ */
+    right: 2px; /* ปรับค่าตามความต้องการ */
     border-radius: 3px 0 0 3px;
 }
 
